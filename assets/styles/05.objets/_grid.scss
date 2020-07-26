@@ -1,0 +1,23 @@
+/* ==========================================================================
+#grid
+========================================================================== */
+$o-grid: '.o-grid';
+
+#{$o-grid}-container {
+    @apply mx-auto box-content w-full px-3;
+}
+
+#{$o-grid}-row {
+    @apply -mx-3 flex;
+}
+
+#{$o-grid}-column {
+    @apply px-3;
+}
+
+
+
+body {
+    width: 100%;
+    height: 100vh;
+}

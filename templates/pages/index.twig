@@ -1,0 +1,86 @@
+{% extends "../_layout/base.twig" %}
+
+{% block head %}
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block page %}
+	<div class="py-14 px-5 | hg:flex hg:items-center hg:justify-center hg:h-screen">
+
+		<div class="rounded bg-white shadow-md relative | hg:flex hg:w-150 lg:mx-auto" x-data="{ shareShow : false }">
+			<img
+			src="/dist/images/drawers.jpg" class="rounded rounded-b-none | lg:max-w-60 lg:rounded-r-none" alt="">
+
+			{# content #}
+			<div class="pt-8 pb-4">
+				<div class="mb-7 px-7">
+					<h2 class="font-bold text-10 text-gray-1 leading-snug mb-4">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
+					<div class=" text-7 leading-normal text-gray-2">
+						<p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+					</div>
+				</div>
+
+				<div class="hg:relative">
+
+					<div class="flex px-7">
+
+						<div class="flex items-center text-7 leading-normal text-gray-2">
+							<img src="/dist/images/avatar-michelle.jpg" class="w-8 h-8 rounded-full mr-3 flex-shrink-0" alt="">
+							<div class="">
+								<div class="text-gray-1 font-bold">Michelle Appleton</div>
+								<div class="">28 Jun 2020</div>
+							</div>
+						</div>
+
+						{# share button #}
+						<div class="ml-auto w-8 h-8 rounded-full bg-gray-2 text-gray-3 fill-current flex items-center justify-center cursor-pointer | hover:bg-gray-1 | hg:relative hg:w-6 hg:h-6">
+							<svg class="icon icon-share relative -top-1px text-10 | hg:text-7" @click.prevent="shareShow = !shareShow">
+								<use href="/dist/icons/icons.svg#icon-share"></use>
+							</svg>
+
+							{# share menu #}
+							<div class="flex items-center bg-gray-1 text-white rounded rounded-t-none py-3 px-7 h-14 absolute z-10 bottom-0 left-0 w-full | hg:absolute hg:transform hg:left-half hg:-translate-x-1/2 hg:-top-16 hg:w-auto" x-bind:class="{ 'flex': shareShow, 'hidden' : !shareShow }">
+								<span class="uppercase mr-4 text-gray-3">Share</span>
+								<ul class="flex -mx-2">
+									<li class="px-2">
+										<a href="">
+											<svg class="icon icon-facebook text-10">
+												<use href="/dist/icons/icons.svg#icon-facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="px-2">
+										<a href="">
+											<svg class="icon icon-twitter text-10">
+												<use href="/dist/icons/icons.svg#icon-twitter"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="px-2">
+										<a href="">
+											<svg class="icon icon-pinterest text-10">
+												<use href="/dist/icons/icons.svg#icon-pinterest"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+
+								<a href class="ml-auto relative z-30 w-8 h-8 rounded-full bg-gray-2 text-white fill-current text-10 flex items-center justify-center | hg:hidden" @click.prevent="shareShow = false">
+									<svg class="icon icon-share relative -top-1px">
+										<use href="/dist/icons/icons.svg#icon-share"></use>
+									</svg>
+								</a>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
